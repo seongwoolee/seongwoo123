@@ -26,19 +26,38 @@ var config = {
 	units: "metric",
 
 	modules: [
-	           {
-		module: 'MMM-iFrame',
-		position: 'bottom_bar',	// This can be any of the regions.
-		config: {
-			// See 'Configuration options' for more information.
-				url: ["https://www.youtube.com/embed/tk381zpHdyI?autoplay=1"],  // as many URLs you want or you can just ["ENTER IN URL"] if single URL.
-				updateInterval: 0.5 * 60 * 1000, // rotate URLs every 30 seconds
-				width: "1280", // width of iframe
-				height: "720", // height of iframe
-				frameWidth: "400" // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
-			}
-		}
+	       
 
+	 {
+		module: "MMM-EmbedYoutube", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
+		position: "top_center",	// This can be any of the regions.
+		config: {
+			// See 'Configuration options' in README.md for more information.
+			video_id: "UHTzZrj5PVA", loop:true, autoplay:false,width: "400",height: "300",controls:true,fs:true
+			 
+		}
+	 },
+
+	 {
+		module: "MMM-EmbedYoutube", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
+		position: "top_right",	// This can be any of the regions.
+		config: {
+			// See 'Configuration options' in README.md for more information.
+			video_id: "UHTzZrj5PVA", loop:true, autoplay:false,width: "400",height: "300",controls:true,fs:true
+			 
+		}
+	 },
+
+ {
+		module: "MMM-EmbedYoutube", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
+		position: "top_left",	// This can be any of the regions.
+		config: {
+			// See 'Configuration options' in README.md for more information.
+			video_id: "iLCnGK9kCdU", loop:true, autoplay:false,width: "400",height: "300",
+                        
+			 
+		}
+	 },
 
 
 		{
