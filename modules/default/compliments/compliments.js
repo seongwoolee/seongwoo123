@@ -12,7 +12,7 @@ Module.register("compliments", {
 	defaults: {
 		compliments: {
 			anytime: [
-				"Hey there sexy!"
+				"어서오세요 민수미용실입니다",
 			],
 			morning: [
 				"Good morning, handsome!",
@@ -25,9 +25,8 @@ Module.register("compliments", {
 				"Looking good today!"
 			],
 			evening: [
-				"Wow, you look hot!",
-				"You look nice!",
-				"Hi, sexy!"
+				"어서오세요 민수미용실입니다",
+
 			]
 		},
 		updateInterval: 30000,
