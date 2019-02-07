@@ -29,27 +29,17 @@ var config = {
 	       
 
 
- {
-		module: "MMM-EmbedYoutube", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
-		position: "top_right",	// This can be any of the regions.
-		config: {
-			// See 'Configuration options' in README.md for more information.
-			video_id: "iLCnGK9kCdU", loop:true, autoplay:false,width: "300",height: "200",
-                        
-			 
-		}
-	 },
+                {
+	               module: "MMM-Globe",
+	               position: 'center',
+	               config: {
+		                 style: 'geoColor',
+		                 imageSize: 300,
+		                 ownImagePath:'http://rammb.cira.colostate.edu/ramsdis/online/images/thumb/himawari-8/full_disk_ahi_natural_color.jpg',
+		                 updateInterval: 10*60*1000
+	                       }
+                },
 
-{
-	module: 'MMM-Globe',
-	position: 'center',
-	config: {
-		style: 'geoColor',
-		imageSize: 300,
-		ownImagePath:'http://rammb.cira.colostate.edu/ramsdis/online/images/thumb/himawari-8/full_disk_ahi_natural_color.jpg',
-		updateInterval: 10*60*1000
-	}
-},
 
 		{
 			module: "alert",
@@ -61,10 +51,11 @@ var config = {
 		{
 			module: "clock",
 			position: "top_left"
+                        
 		},
 		{
 			module: "calendar",
-			header: "Fucking Haircut plan",
+			header: "Fucking Haircut plan", 
 			position: "top_left",
 			config: {
 				calendars: [
@@ -74,6 +65,10 @@ var config = {
 					}
 				]
 			}
+		},
+                {
+			module: "example",
+			position: "top_left"
 		},
 		{
 			module: "compliments",

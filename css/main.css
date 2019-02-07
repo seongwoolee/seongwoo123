@@ -1,7 +1,7 @@
 html {
   cursor: none;
   overflow: hidden;
-  background: #002;
+  background: #000;
 }
 
 ::-webkit-scrollbar {
@@ -13,7 +13,7 @@ body {
   position: absolute;
   height: calc(100% - 120px);
   width: calc(100% - 120px);
-  background: #002;
+  background: #000;
   color: #aaa;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;

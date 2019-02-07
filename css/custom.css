@@ -9,6 +9,25 @@
  * Changes to this files will be ignored by GIT. *
  *****************************************************/
 
- body {
- 	
+
+  body {
+ 	color:red;
+ 	border: 5px solid yellow;
  }
+ .newsfeed .dimmed {
+	color: #E98E2C; 
+}
+ .compliments {
+      color:red;
+      }
+ .clock .dimmed {
+	color: blue; 
+}
+.clock .time {
+                      font-size:60px;
+                      color:purple; 
+}
+.clock .date {
+                     font-size:30px;
+                     color:red; 
+}
