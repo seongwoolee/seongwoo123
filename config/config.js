@@ -9,7 +9,7 @@
  */
 
 var config = {
-	address: "localhost", // Address to listen on, can be:
+        address: "localhost", // Address to listen on, can be:
 	                      // - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 	                      // - another specific IPv4/6 to listen on a specific interface
 	                      // - "", "0.0.0.0", "::" to listen on any interface
@@ -26,8 +26,44 @@ var config = {
 	units: "metric",
 
 	modules: [
-	       
+	            
+	             {
+                module: "MMM-SmartWebDisplay",
+		position: "top_left",	// This can be any of the regions.
+		config: {
+			// See 'Configuration options' for more information.
+			logDebug: false, //set to true to get detailed debug logs. To see them : "Ctrl+Shift+i"
+			height:"100%", //hauteur du cadre en pixel ou %
+			width:"100%", //largeur
+               		updateInterval: 0, //in min. Set it to 0 for no refresh (for videos)
+                	NextURLInterval: 0.5, //in min, set it to 0 not to have automatic URL change. If only 1 URL given, it will be updated
+                	displayStateInfos: false,	//to display if the module is on autoloop, or stop. 
+                	displayLastUpdate: false, //to display the last update of the URL
+			/*displayLastUpdateFormat: 'ddd - HH:mm:ss', //format of the date and time to display*/
+                	url: ["https://www.youtube.com/embed/Qwc2Eq6YXTQ?autoplay=1"], //source of the URL to be displayed
+                	scrolling: "no" // allow scrolling or not. html 4 only
+			}
+	             },
+       
+                    {
+                 module: "MMM-Modulebar",
+                 position: "top_right", // This can be any of the regions.
+                  config: {
+                   showBorder:false,
+                   buttons: {
+                   
+                     "1": {
+	                  module: "clock",
+                          text: "Clock123",                
+                          },                
+                     "2": {
+	                  module: "MMM-SmartWebDisplay",
+                          text: "youtube",                
+                          },
 
+                            },
+                          }
+                    },
 
                 {
 	               module: "MMM-Globe",
@@ -50,7 +86,11 @@ var config = {
 		},
 		{
 			module: "clock",
-			position: "top_left"
+			position: "top_left",
+                        config : {
+			 
+		}
+
                         
 		},
 		{

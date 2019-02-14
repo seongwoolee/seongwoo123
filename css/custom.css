@@ -11,23 +11,20 @@
 
 
   body {
- 	color:red;
- 	border: 5px solid yellow;
+ 	
  }
  .newsfeed .dimmed {
 	color: #E98E2C; 
 }
  .compliments {
-      color:red;
+    color:red;
       }
  .clock .dimmed {
 	color: blue; 
 }
-.clock .time {
-                      font-size:60px;
-                      color:purple; 
+.clock .time {                    
+    color:purple; 
 }
 .clock .date {
-                     font-size:30px;
-                     color:red; 
+    color:red; 
 }

@@ -15,14 +15,10 @@ Module.register("compliments", {
 				"안녕하세요, 민숙헤어입니다★",
 			],
 			morning: [
-				"Good morning, handsome!",
-				"Enjoy your day!",
-				"How was your sleep?"
+				"안녕하세요, 민숙헤어입니다★",
 			],
 			afternoon: [
-				"Hello, beauty!",
-				"You look sexy!",
-				"Looking good today!"
+				"안녕하세요, 민숙헤어입니다★",
 			],
 			evening: [
 				"안녕하세요, 민숙헤어입니다★",
