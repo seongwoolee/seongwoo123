@@ -26,56 +26,117 @@ var config = {
 	units: "metric",
 
 	modules: [
-	            
-	             {
-                module: "MMM-SmartWebDisplay",
-		position: "top_left",	// This can be any of the regions.
-		config: {
-			// See 'Configuration options' for more information.
-			logDebug: false, //set to true to get detailed debug logs. To see them : "Ctrl+Shift+i"
-			height:"100%", //hauteur du cadre en pixel ou %
-			width:"100%", //largeur
-               		updateInterval: 0, //in min. Set it to 0 for no refresh (for videos)
-                	NextURLInterval: 0.5, //in min, set it to 0 not to have automatic URL change. If only 1 URL given, it will be updated
-                	displayStateInfos: false,	//to display if the module is on autoloop, or stop. 
-                	displayLastUpdate: false, //to display the last update of the URL
-			/*displayLastUpdateFormat: 'ddd - HH:mm:ss', //format of the date and time to display*/
-                	url: ["https://www.youtube.com/embed/Qwc2Eq6YXTQ?autoplay=1"], //source of the URL to be displayed
-                	scrolling: "no" // allow scrolling or not. html 4 only
-			}
-	             },
-       
-                    {
-                 module: "MMM-Modulebar",
-                 position: "top_right", // This can be any of the regions.
-                  config: {
-                   showBorder:false,
-                   buttons: {
-                   
-                     "1": {
-	                  module: "clock",
-                          text: "Clock123",                
-                          },                
-                     "2": {
-	                  module: "MMM-SmartWebDisplay",
-                          text: "youtube",                
-                          },
+	{
+	  module: 'internet-monitor',
+            position: 'top_center',
+            header: 'Internet Monitor',
+            config:{
+                type: '',
+                maxTime: 20000,
+                updateInterval: 0,
+                verbose: false,
+                displayStrength: true,
+                displaySpeed: true,
+                strengthIconSize: 80,
+                maxGaugeScale: 100,
+		wifiSymbol:{
+                    size: 50,
+                    fullColor: '#3afc25',
+                    almostColor: '#ffff0c',
+                    halfColor: '#ff8c00',
+	            noneColor: '#ff1111'
+		},
+            },
+	},
+                      {
+                        module: "MMM-soccer",
+                        position: "top_left",
+                        config: {
+                                api_key: "e353fb53195b43b1a574d8f829f35d13",
+                                show: 'ENGLAND',
+                                logos:true,
+				 leagues: {
+                                   ENGLAND: 'PL',
+                                          },
+                                  }
+                       },
 
-                            },
-                          }
-                    },
+		{
+		module: "MMM-Snow",
+		position: "fullscreen_above",
+		config: { // See 'Configuration options' for more information.
+			flakeCount: 100,
+			theme: "love"			
+		}
+	},
 
                 {
-	               module: "MMM-Globe",
-	               position: 'center',
+			module: "currentweather",
+			position: "top_right",
+			header: "    오늘의 날씨",
+			config: {
+				location: "Seoul",
+				locationID: "1835847",  //ID from http://bulk.openweathermap.org/sample/; unzip the gz file and find your city
+				appid: "f167f10ed5044b1a287054c8ccfb6730",
+                                
+			}
+		},
+		{
+			module: "weatherforecast",
+			position: "top_right",
+			header: "날씨",
+			config: {
+				location: "Anyang",
+				locationID: "1835847",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "f167f10ed5044b1a287054c8ccfb6730"
+			}
+		},
+	            
+              
+                    {
+                  module: "MMM-Modulebar",                  // main icon module
+                  position: "top_right", 
+
+                   config: {
+                   showBorder:false,
+                   direction:"column",
+                   buttons: {
+                   
+                                   
+                     "1": {             //youtube icon
+	                  module: "MMM-Modulebar1",
+                          text: "",   
+                          img:"https://png.pngtree.com/element_origin_min_pic/16/10/05/1057f46865db089.jpg",
+                          width:"50",
+                          height:"50",             
+                          },
+                     "2": {              //webtoon icon
+	                  module: "MMM-iFrame",                      
+                          text: "",   
+                          img:"https://apprecs.org/gp/images/app-icons/300/ec/com.nhn.android.webtoon.jpg",
+                          width:"50",
+                          height:"50",             
+                          },
+
+                             },
+                           }
+                    },
+  
+
+
+                       {
+	               module: "MMM-Globe",                 // photo
+	               position: "center",
 	               config: {
 		                 style: 'geoColor',
 		                 imageSize: 300,
 		                 ownImagePath:'http://rammb.cira.colostate.edu/ramsdis/online/images/thumb/himawari-8/full_disk_ahi_natural_color.jpg',
 		                 updateInterval: 10*60*1000
 	                       }
-                },
+                       },     
 
+
+ 
 
 		{
 			module: "alert",
@@ -88,65 +149,47 @@ var config = {
 			module: "clock",
 			position: "top_left",
                         config : {
+                        display:"none",
 			 
 		}
 
                         
 		},
-		{
-			module: "calendar",
-			header: "Fucking Haircut plan", 
-			position: "top_left",
-			config: {
-				calendars: [
-					{
-						symbol: "calendar-check-o ",
-						url: "webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics"
-					}
-				]
-			}
-		},
-                {
-			module: "example",
-			position: "top_left"
-		},
+
 		{
 			module: "compliments",
 			position: "lower_third"
 		},
-		{
-			module: "currentweather",
-			position: "top_right",
-			config: {
-				location: "New York",
-				locationID: "",  //ID from http://bulk.openweathermap.org/sample/; unzip the gz file and find your city
-				appid: "YOUR_OPENWEATHER_API_KEY"
-			}
-		},
-		{
-			module: "weatherforecast",
-			position: "top_right",
-			header: "Weather Forecast",
-			config: {
-				location: "New York",
-				locationID: "5128581",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "YOUR_OPENWEATHER_API_KEY"
-			}
-		},
+
 		{
 			module: "newsfeed",
 			position: "bottom_bar",
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					}
+						title: "사회 , 경제  ",
+						url: "http://media.daum.net/rss/part/primary/entertain/rss2.xml" 
+					},
+					{
+						title: "스포츠  ",
+						url: "http://media.daum.net/rss/today/primary/sports/rss2.xml" 
+					},
+					{
+						title: "연예  ",
+						url: "http://api.sbs.co.kr/xml/news/rss.jsp?pmDiv=entertainment" 
+					},
+					{
+						title: "IT , 과학  ",
+						url: "http://media.daum.net/rss/part/primary/digital/rss2.xml" 
+					},
 				],
 				showSourceTitle: true,
-				showPublishDate: true
+				showPublishDate: false
+
+
 			}
 		},
+
 	]
 
 };
